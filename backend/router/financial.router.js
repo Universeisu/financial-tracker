@@ -1,6 +1,5 @@
 const financialController = require("../controllers/financial.controller");
 const express = require("express");
-const { Financial } = require("../models");
 const router = express.Router();
 
 //create a new financial
