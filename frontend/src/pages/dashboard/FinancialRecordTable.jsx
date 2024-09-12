@@ -73,7 +73,7 @@ const FinancialRecordTable = () => {
         <tbody>
           {records.map((record, index) => (
             <tr key={record.id || index} className="bg-white hover:bg-gray-100">
-              <td className="px-4 py-2 border-b">{record.userId}</td>
+              <td className="px-4 py-2 border-b">{record.userID}</td>
               <td className="px-4 py-2 border-b">{record.description}</td>
               <td className="px-4 py-2 border-b">{record.date}</td>
               <td className="px-4 py-2 border-b">{record.amount}</td>

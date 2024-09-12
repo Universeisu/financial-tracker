@@ -6,8 +6,8 @@ const getAllFinancialRecords = async () => {
 };
 
 // Get all financial records by userId
-const getAllFinancialRecordsByUserId = async (userId) => {
-  return await api.get(`${VITE_FINANCIAL_API_URL}/user/${userId}`);
+const getAllFinancialRecordsByUserID = async (userID) => {
+  return await api.get(`${VITE_FINANCIAL_API_URL}/user/${userID}`);
 };
 
 // Get a financial record by id
@@ -32,7 +32,7 @@ const deleteFinancialRecord = async (id) => {
 
 const FinancialService = {
   getAllFinancialRecords,
-  getAllFinancialRecordsByUserId,
+  getAllFinancialRecordsByUserID,
   getFinancialRecordById,
   createFinancialRecord,
   updateFinancialRecord,

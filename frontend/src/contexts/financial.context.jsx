@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import FinancialService from "../services/financail.service"
+import FinancialService from "../services/financail.service";
 import { useUser } from "@clerk/clerk-react";
 
 export const FinancialRecordContext = createContext();
@@ -11,7 +11,9 @@ export const FinancialRecordProvider = ({ children }) => {
   const fetchRecords = async () => {
     if (!user) return;
     try {
-      const response = await FinancialService.getAllFinancialRecordsByUserId(user.id);
+      const response = await FinancialService.getAllFinancialRecordsByUserID(
+        user.id
+      );
       if (response.status === 200) {
         setRecords(response.data);
       }
@@ -37,12 +39,9 @@ export const FinancialRecordProvider = ({ children }) => {
 
   const updateRecord = (id, updatedRecord) => {
     setRecords((prevRecords) =>
-      prevRecords.map((record) =>
-        record.id === id ? updatedRecord : record
-      )
+      prevRecords.map((record) => (record.id === id ? updatedRecord : record))
     );
   };
-
 
   const deleteRecord = async (id) => {
     try {
